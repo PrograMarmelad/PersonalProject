@@ -1,20 +1,13 @@
-//
-//  Helper.swift
-//  PersonalProject
-//
-//  Created by Valera Zhdanov on 11.10.2024.
-//
-
 import Foundation
 
 class Helper {
-    private var person: [Person] = []
-   
-    func addPerson(_ people: Person) {
+    private var person: [User] = []
+    
+    func addPerson(_ people: User) {
         person.append(people)
     }
     
-    func getPerson() -> [Person] {
-      person
+    func getPerson() -> [User] {
+        person
     }
 }

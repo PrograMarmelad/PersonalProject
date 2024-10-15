@@ -1,21 +1,15 @@
-//
-//  Person.swift
-//  PersonalProject
-//
-//  Created by Valera Zhdanov on 10.10.2024.
-//
-
 import Foundation
 
-class Person {
-    var name: String
-    var surName: String
+struct Person {
+    let name: String
+    let surName: String
     var fullName: String {
         "\(name) \(surName)"
     }
-    
-    init(name: String, surName: String) {
-        self.name = name
-        self.surName = surName
-    }
+}
+
+struct User {
+    let login: String
+    let password: Int
+    var personInform: Person
 }

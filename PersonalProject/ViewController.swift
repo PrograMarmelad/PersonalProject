@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  PersonalProject
-//
-//  Created by Valera Zhdanov on 06.10.2024.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -13,27 +6,37 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         updatePerson()
-        
-       /* Задание 6
-        let person = Person()
-        print("Меня зовут \(person.name), я создал своё первое приложение")
-        print(person.fullName)
-        */
-        // Do any additional setup after loading the view.
     }
     
     private func updatePerson() {
         
         let helper = Helper()
-        let personOne = Person(name: "Валерий", surName: "Жданов")
-        let personTwo = Person(name: "Виктория", surName: "Жданова")
         
-        helper.addPerson(personOne)
-        helper.addPerson(personTwo)
+        let personOne = Person(
+            name: "Валерий",
+            surName: "Жданов"
+        )
+        let personTwo = Person(
+            name: "Виктория",
+            surName: "Жданова"
+        )
         
+        let userOne = User(
+            login: "Valera",
+            password: 222,
+            personInform: personOne
+        )
+        let userTwo = User(
+            login: "Vika",
+            password: 333,
+            personInform: personTwo
+        )
+        
+        helper.addPerson(userOne)
+        helper.addPerson(userTwo)
         
         for person in helper.getPerson() {
-            print(person.fullName)
+            print(person.personInform.fullName)
         }
     }
 }
