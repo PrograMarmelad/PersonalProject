@@ -2,6 +2,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    private let helper = Helper()
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -9,8 +11,6 @@ class ViewController: UIViewController {
     }
     
     private func updatePerson() {
-        
-        let helper = Helper()
         
         let personOne = Person(
             name: "Валерий",
@@ -32,10 +32,10 @@ class ViewController: UIViewController {
             personInform: personTwo
         )
         
-        helper.addPerson(userOne)
-        helper.addPerson(userTwo)
+        helper.addUser(userOne)
+        helper.addUser(userTwo)
         
-        for person in helper.getPerson() {
+        for person in helper.getUser() {
             print(person.personInform.fullName)
         }
     }
