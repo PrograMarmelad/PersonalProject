@@ -4,17 +4,26 @@ class ViewController: UIViewController {
     
     private let helper = Helper()
     private let userRepository = UserRepository()
+    
     private let fullNameLabel = UILabel()
+    private let setupButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Show FullName", for: .normal)
+        button.backgroundColor = .green
+        button.frame = CGRect(x: 100, y: 150, width: 150, height: 50)
+        return button
+    }()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         view.backgroundColor = .cyan
-        view.alpha = 0.7
+        view.alpha = 1.0
         updatePerson()
         
         setupLabel()
         view.addSubview(fullNameLabel)
+        view.addSubview(setupButton)
     }
     
     private func updatePerson() {
