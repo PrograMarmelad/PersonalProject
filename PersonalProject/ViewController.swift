@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     private func updatePerson() {
         
         let users = userRepository.getUser()
-        helper.addUsers(users[0], users[1])
+        helper.addUsers(users)
         
         for user in helper.getUser() {
             print(user.personInform.fullName)
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     }
     
     private func setupLabel() {
-        let randomFullName = userRepository.getUser().randomElement()
+        let randomFullName = helper.getUser().randomElement()
         fullNameLabel.text = randomFullName?.personInform.fullName
         fullNameLabel.font = .systemFont(ofSize: 25)
         fullNameLabel.textColor = .blue
